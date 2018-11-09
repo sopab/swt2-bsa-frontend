@@ -1,7 +1,8 @@
 import {Routes} from '@angular/router';
 
-import {DsbMitgliedDetailGuard, DsbMitgliedOverviewGuard, VerwaltungGuard} from './guards';
-import {DsbMitgliedDetailComponent, DsbMitgliedOverviewComponent, VerwaltungComponent} from './components';
+import {DsbMitgliedDetailGuard, DsbMitgliedOverviewGuard,DsbKampfrichterOverviewGuard,DsbKampfrichterDetailGuard, VerwaltungGuard} from './guards';
+import {DsbMitgliedDetailComponent, DsbMitgliedOverviewComponent,DsbKampfrichterOverviewComponent,DsbKampfrichterDetailComponent, VerwaltungComponent} from './components';
+
 
 export const VERWALTUNG_ROUTES: Routes = [
   {path: '', component: VerwaltungComponent, canActivate: [VerwaltungGuard]},
@@ -11,5 +12,12 @@ export const VERWALTUNG_ROUTES: Routes = [
     pathMatch:   'full',
     canActivate: [DsbMitgliedOverviewGuard]
   },
-  {path: 'dsbmitglieder/:id', component: DsbMitgliedDetailComponent, canActivate: [DsbMitgliedDetailGuard]}
+  {path: 'dsbmitglieder/:id', component: DsbMitgliedDetailComponent, canActivate: [DsbMitgliedDetailGuard]},
+  {
+    path:        'dsbkampfrichter',
+    component:   DsbKampfrichterOverviewComponent,
+    pathMatch:   'full',
+    canActivate: [DsbKampfrichterOverviewGuard]
+  },
+  {path: 'dsbkampfrichter/:id', component: DsbKampfrichterDetailComponent, canActivate: [DsbKampfrichterDetailGuard]}
 ];

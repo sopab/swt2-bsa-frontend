@@ -1,0 +1,102 @@
+<bla-common-dialog [config]="config"
+                   [loading]="loading">
+
+  <form id="dsbKampfrichterForm"
+        class="horizontal-form half-page"
+        #dsbKampfrichterForm="ngForm">
+
+    <!-- Benutzer-ID -->
+    <div class="form-group row">
+      <label for="dsbKampfrichterVorname"
+             class="col-sm-3 col-form-label">
+        <span>{{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_BENUTZER_ID.LABEL' | translate }}</span>
+        <span> *</span>
+      </label>
+      <div class="col-sm-9">
+        <input type="text"
+               class="form-control"
+               required
+               id="dsbKampfrichterVorname"
+               name="dsbKampfrichterVorname"
+               #dsbKampfrichterVorname="ngModel"
+               [(ngModel)]="currentKampfrichter.vorname"
+               [class.is-invalid]="dsbKampfrichterVorname.invalid && !dsbKampfrichterVorname.untouched"
+               placeholder="{{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_BENUTZER_ID.PLACEHOLDER' | translate }}">
+
+        <div class="invalid-feedback">
+          {{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_BENUTZER_ID.ERROR' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Wettkampf-ID -->
+    <div class="form-group row">
+      <label for="dsbKampfrichterWettkampfID"
+             class="col-sm-3 col-form-label">
+        <span>{{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_WETTKAMPF_ID.LABEL' | translate }}</span>
+        <span> *</span>
+      </label>
+      <div class="col-sm-9">
+        <input type="text"
+               class="form-control"
+               required
+               id="dsbKampfrichterWettkampfID"
+               name="dsbKampfrichterWettkampfID"
+               #dsbKampfrichterWettkampfID="ngModel"
+               [(ngModel)]="currentKampfrichter.wettkampfID"
+               [class.is-invalid]="dsbKampfrichterWettkampfID.invalid && !dsbKampfrichterWettkampfID.untouched"
+               placeholder="{{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_WETTKAMPF_ID.PLACEHOLDER' | translate }}">
+
+        <div class="invalid-feedback">
+          {{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_WETTKAMPF_ID.ERROR' | translate }}
+        </div>
+      </div>
+    </div>
+
+    <!-- leitend -->
+    <div class="form-group row">
+      <label for="dsbKampfrichterWettkampfID"
+             class="col-sm-3 col-form-label">
+        <span>{{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.KAMPFRICHTER_LEITEND.LABEL' | translate }}</span>
+      </label>
+      <div class="col-sm-2">
+          <input type="checkbox" class="form-control" id="dsbKampfrichterLeitend">
+      </div>
+    </div>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Regular link</a>
+      <a class="dropdown-item disabled" href="#">Disabled link</a>
+      <a class="dropdown-item" href="#">Another link</a>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-9 button-box">
+
+
+        <bla-button *ngIf="!entityExists()"
+                    [id]="'dsbKampfrichterSaveButton'"
+                    [disabled]="!dsbKampfrichterForm.valid"
+                    [loading]="saveLoading"
+                    (onClick)="onSave($event)">
+          {{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.SAVE' | translate }}
+        </bla-button>
+        <bla-button *ngIf="entityExists()"
+                    [id]="'dsbKAMPFRICHTERUpdateButton'"
+                    [disabled]="!dsbKampfrichterForm.valid"
+                    [loading]="saveLoading"
+                    (onClick)="onUpdate($event)">
+          {{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.UPDATE' | translate }}
+        </bla-button>
+
+        <bla-button *ngIf="entityExists()"
+                    [buttonType]="ButtonType.DANGER"
+                    [loading]="deleteLoading"
+                    (onClick)="onDelete($event)">
+          {{ 'MANAGEMENT.DSBKAMPFRICHTER_DETAIL.FORM.DELETE' | translate }}
+        </bla-button>
+      </div>
+    </div>
+  </form>
+
+</bla-common-dialog>

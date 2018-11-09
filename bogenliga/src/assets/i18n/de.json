@@ -96,10 +96,15 @@
     "VERWALTUNG": {
       "TITLE": "Verwaltung",
       "NAVIGATION": {
+        "DSBKAMPFRICHTER": {
+          "LABEL": "Kampfrichter",
+          "DESCRIPTION": "Verwaltung der Kampfrichter"
+        },
         "DSBMITGLIEDER": {
           "LABEL": "DSB Mitglieder",
           "DESCRIPTION": "Verwaltung der DSB Mitglieder"
         }
+
       }
     },
     "DSBMITGLIEDER": {
@@ -119,6 +124,23 @@
           "DESCRIPTION": "Wollen Sie das DSB Mitglied mit der ID=%s wirklich löschen? Der Datensatz ist danach nicht mehr verfügbar."
         }
       }
+    },
+    "DSBKAMPFRICHTER":{
+      "TITLE": "Kampfrichter - Übersicht",
+      "TABLE": {
+        "HEADERS": {
+          "BENUTZER_ID": "Benutzer-ID",
+          "WETTKAMPF_ID": "Wettkampf-ID",
+          "LEITEND": "Leitend"
+        }
+      },
+      "NOTIFICATION": {
+        "DELETE": {
+          "TITLE": "Kampfrichter löschen",
+          "DESCRIPTION": "Wollen Sie den Kampfrichter mit der Benutzer-ID=%s wirklich löschen? Der Datensatz ist danach nicht mehr verfügbar."
+        }
+      }
+
     },
     "DSBMITGLIEDER_DETAIL": {
       "TITLE": "DSB Mitglied - Details",
@@ -175,6 +197,50 @@
           "DESCRIPTION": "Das DSB Mitglied wurde erfolgreich gespeichert."
         }
       }
+    },
+    "DSBKAMPFRICHTER_DETAIL": {
+      "TITLE": "DSB Mitglied - Details",
+      "FORM": {
+        "KAMPFRICHTER_BENUTZER_ID":{
+          "LABEL": "Kampfrichter Benutzer-ID",
+          "PLACEHOLDER": "Bitte geben sie eine Benutzer-ID ein",
+          "ERROR": "Bitte eine gültige Benutzer-ID ein"
+        },
+        "KAMPFRICHTER_WETTKAMPF_ID":{
+          "LABEL": "Kampfrichter Wettkampf-ID",
+          "PLACEHOLDER": "Bitte geben sie eine Wettkampf-ID ein",
+          "ERROR": "Bitte eine gültige Wettkampf-ID ein"
+        },
+
+        "KAMPFRICHTER_LEITEND": {
+          "LABEL": "Leitend"
+
+        },
+        "SAVE": "Speichern",
+        "UPDATE": "Aktualisieren",
+        "DELETE": "Löschen"
+
+
+      },
+      "NOTIFICATION": {
+        "DELETE": {
+          "TITLE": "Kampfrichter löschen",
+          "DESCRIPTION": "Wollen Sie den Kampfrichter mit der Benutzer-ID=%s wirklich löschen? Der Datensatz ist danach nicht mehr verfügbar."
+        },
+        "DELETE_SUCCESS": {
+          "TITLE": "Erfolg",
+          "DESCRIPTION": "Der Kampfrichter wurde erfolgreich gelöscht."
+        },
+        "DELETE_FAILURE": {
+          "TITLE": "Fehler beim Löschen",
+          "DESCRIPTION": "Der Kampfrichter konnte nicht gelöscht werden."
+        },
+        "SAVE": {
+          "TITLE": "Erfolg",
+          "DESCRIPTION": "Der Kampfrichter wurde erfolgreich gespeichert."
+        }
+      }
+
     }
   },
 

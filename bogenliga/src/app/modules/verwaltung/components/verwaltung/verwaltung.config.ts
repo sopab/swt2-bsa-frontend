@@ -10,6 +10,14 @@ export const VERWALTUNG_CONFIG: NavigationDialogConfig = {
         descriptionKey: 'MANAGEMENT.VERWALTUNG.NAVIGATION.DSBMITGLIEDER.DESCRIPTION',
         icon:           'users',
         route:          'dsbmitglieder'
+
+      },
+      {
+        labelKey:       'MANAGEMENT.VERWALTUNG.NAVIGATION.DSBKAMPFRICHTER.LABEL',
+        descriptionKey: 'MANAGEMENT.VERWALTUNG.NAVIGATION.DSBKAMPFRICHTER.DESCRIPTION',
+        icon:           'users',
+        route:          'dsbkampfrichter'
+
       }
     ]
   }
